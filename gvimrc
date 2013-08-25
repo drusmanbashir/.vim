@@ -72,3 +72,8 @@ set noswapfile
 set backupdir=~/.vim/temp/
 set directory=~/.vim/temp/
 "silent execute '!rm ~/.vim/temp/*~'
+"
+"==================TAGLIST====================
+let Tlist_Use_Right_Window   = 1
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
