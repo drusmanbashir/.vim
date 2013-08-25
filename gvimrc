@@ -43,7 +43,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 set wildchar=<Tab> wildmenu wildmode=full
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
+let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
 "===============================BUFFER SHORTCUTS================================================
 "nnoremap <S-tab> <Esc>:bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
@@ -67,3 +67,8 @@ set autoindent
 set autowrite
 nnoremap <silent> <F11> :YRShow<CR>
 nnoremap <C-\> :q!<CR>
+
+set noswapfile
+set backupdir=~/.vim/temp/
+set directory=~/.vim/temp/
+"silent execute '!rm ~/.vim/temp/*~'
