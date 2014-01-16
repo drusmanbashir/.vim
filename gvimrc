@@ -2,10 +2,11 @@
 filetype plugin indent on
 autocmd FileType html,python setlocal shiftwidth=4 tabstop=4
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
-
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 noremap! <C-s> <Esc>:w <CR>
 noremap <silent> <F10> :set hlsearch! hlsearch?<CR>
+set ignorecase
 set number 
 set nowrap
 
@@ -34,13 +35,15 @@ nnoremap <silent> <C-tab> :execute 'silent! tabmove ' . tabpagenr()<CR>
 " ===============================SYNTAX + SYNTASTIC SETTINGS================================================
 syntax enable 
 au BufNewFile,BufRead *.cpp set syntax=cpp11
+au BufNewFile,BufRead *.sql setf pgsql
+au BufNewFile,BufRead *.psql setf pgsql
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 "let g:statline_syntastic = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+"let g:syntastic_quiet_warnings=1
 set wildchar=<Tab> wildmenu wildmode=full
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
@@ -77,3 +80,4 @@ set directory=~/.vim/temp/
 let Tlist_Use_Right_Window   = 1
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
+
